@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* Enable class-based dark mode (`html.dark`) for manual theme toggling */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Custom neutral carbon shades matching the reference dark UI */
+  --color-carbon: #161618;
+  --color-carbon-window: #1b1c1f;
+  --color-carbon-bar: #232529;
+  --color-carbon-line: #2b2e33;
+}
