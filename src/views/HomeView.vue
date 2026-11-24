@@ -16,34 +16,17 @@ const activeProject = ref<ProjectItem | null>(null)
 </script>
 
 <template>
-  <PortfolioLayout
-    :handle="portfolioData.handle"
-    :github-url="portfolioData.githubUrl"
-    :telegram-url="portfolioData.telegramUrl"
-    :is-dark="isDark"
-    @toggle-theme="toggleTheme"
-  >
-    <BioIntro
-      :full-name="portfolioData.fullName"
-      :bio="portfolioData.bio"
-      :avatar-url="portfolioData.avatarUrl"
-    />
+  <PortfolioLayout :handle="portfolioData.handle" :github-url="portfolioData.githubUrl"
+    :telegram-url="portfolioData.telegramUrl" :is-dark="isDark" @toggle-theme="toggleTheme">
+    <BioIntro :full-name="portfolioData.fullName" :bio="portfolioData.bio" :avatar-url="portfolioData.avatarUrl" />
 
     <SkillsSection :skill-groups="portfolioData.skillGroups" />
 
-    <StackedProjectsSection
-      :projects="portfolioData.projects"
-      :limit="6"
-      @select-project="activeProject = $event"
-      @view-all="navigateTo('projects')"
-    />
+    <StackedProjectsSection :projects="portfolioData.projects" :limit="6" @select-project="activeProject = $event"
+      @view-all="navigateTo('projects')" />
 
-    <ExperienceLedger
-      :experience="portfolioData.experience"
-      :email="portfolioData.email"
-      :github-url="portfolioData.githubUrl"
-      :telegram-url="portfolioData.telegramUrl"
-    />
+    <ExperienceLedger :experience="portfolioData.experience" :email="portfolioData.email"
+      :github-url="portfolioData.githubUrl" :telegram-url="portfolioData.telegramUrl" />
 
     <ProjectDetailModal :project="activeProject" @close="activeProject = null" />
   </PortfolioLayout>

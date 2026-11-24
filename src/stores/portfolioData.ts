@@ -1,14 +1,6 @@
 import avatarPhoto from '@/assets/images/songhai Yeanlang.jpg'
-
-export type SchematicKind =
-  | 'sql-client'
-  | 'btree'
-  | 'screen-crop'
-  | 'code-diff'
-  | 'ecommerce'
-  | 'rest-api'
-  | 'dashboard'
-  | 'vps-deploy'
+import posCafeImg from '@/assets/images/projects/Untitled-1.png'
+import tgSenderImg from '@/assets/images/projects/Untitled-2.png'
 
 export type ProjectCategory = 'Full-Stack' | 'Frontend' | 'Backend & DevOps'
 
@@ -47,8 +39,7 @@ export interface ProjectItem {
   subtitle: string
   category: ProjectCategory
   featured?: boolean
-  schematic: SchematicKind
-  imageUrl?: string
+  image?: string
   summary: string
   stack: string[]
   liveUrl?: string
@@ -123,10 +114,10 @@ export const portfolioData: PortfolioProfile = {
       subtitle: 'for mediem shop',
       category: 'Full-Stack',
       featured: true,
-      schematic: 'sql-client',
+      image: posCafeImg,
       summary:
         'A browser-based SQL workspace for inspecting schemas, editing rows inline, and running parameterized queries against PostgreSQL and MySQL.',
-      stack: ['Bootstrap','Vue.js','Node.js', 'ExpressJS', 'MySQL'],
+      stack: ['Bootstrap', 'Vue.js', 'Node.js', 'ExpressJS', 'MySQL'],
       liveUrl: 'https://github.com/songhai-yeanlang',
       repoUrl: 'https://github.com/songhai-yeanlang',
     },
@@ -136,9 +127,8 @@ export const portfolioData: PortfolioProfile = {
       subtitle: 'Full-stack e-commerce platform',
       category: 'Full-Stack',
       featured: true,
-      schematic: 'ecommerce',
-      summary:
-        'TG-Sender is a tool that can send messages to Telegram users.',
+      image: tgSenderImg,
+      summary: 'TG-Sender is a tool that can send messages to Telegram users.',
       stack: ['Bootstrap', 'Vue 3', 'ExpressJS', 'MySQL'],
       liveUrl: 'https://github.com/songhai-yeanlang',
       repoUrl: 'https://github.com/songhai-yeanlang',
@@ -149,7 +139,7 @@ export const portfolioData: PortfolioProfile = {
       subtitle: 'Screenshot & annotation editor',
       category: 'Frontend',
       featured: true,
-      schematic: 'screen-crop',
+      image: '',
       summary:
         'A lightweight capture and annotation tool in the browser for cropping regions, redacting sensitive text, and exporting crisp documentation images.',
       stack: ['Vue.js', 'TypeScript', 'Tailwind CSS'],
@@ -162,7 +152,7 @@ export const portfolioData: PortfolioProfile = {
       subtitle: 'Sample blog post website',
       category: 'Full-Stack',
       featured: true,
-      schematic: 'dashboard',
+      image: '',
       summary:
         'Real-time inventory tracking and daily revenue reporting system built for retail shops, featuring barcode lookup and low-stock alerts.',
       stack: ['Vue.js', 'ExpressJS', 'PostgreSQL'],
@@ -170,22 +160,44 @@ export const portfolioData: PortfolioProfile = {
       repoUrl: 'https://github.com/songhai-yeanlang',
     },
     {
-      id: 'phsar-yerng',
+      id: 'phsar-yerng-1',
       title: 'phsar yerng ',
       subtitle: 'ecommunce website ',
       category: 'Backend & DevOps',
       featured: true,
-      schematic: 'rest-api',
+      image: '',
       summary:
         'Modular RESTful backend service handling JWT refresh rotation, rate limiting, request validation, and Postman-documented endpoints.',
       stack: ['Node.js', 'ExpressJS', 'PostgreSQL', 'Postman'],
       liveUrl: 'https://github.com/songhai-yeanlang',
       repoUrl: 'https://github.com/songhai-yeanlang',
     },
-   
-   
-    
-   
+    {
+      id: 'phsar-yerng-2',
+      title: 'phsar yerng ',
+      subtitle: 'ecommunce website ',
+      category: 'Backend & DevOps',
+      featured: true,
+      image: '',
+      summary:
+        'Modular RESTful backend service handling JWT refresh rotation, rate limiting, request validation, and Postman-documented endpoints.',
+      stack: ['Node.js', 'ExpressJS', 'PostgreSQL', 'Postman'],
+      liveUrl: 'https://github.com/songhai-yeanlang',
+      repoUrl: 'https://github.com/songhai-yeanlang',
+    },
+    {
+      id: 'phsar-yerng-3',
+      title: 'phsar yerng ',
+      subtitle: 'ecommunce website ',
+      category: 'Backend & DevOps',
+      featured: true,
+      image: '',
+      summary:
+        'Modular RESTful backend service handling JWT refresh rotation, rate limiting, request validation, and Postman-documented endpoints.',
+      stack: ['Node.js', 'ExpressJS', 'PostgreSQL', 'Postman'],
+      liveUrl: 'https://github.com/songhai-yeanlang',
+      repoUrl: 'https://github.com/songhai-yeanlang',
+    },
   ],
   experience: [
     {
@@ -197,7 +209,5 @@ export const portfolioData: PortfolioProfile = {
       description:
         'Designing and shipping web interfaces, developer utilities, and component systems with Vue, TypeScript, and modern browser APIs.',
     },
-   
-   
   ],
 }

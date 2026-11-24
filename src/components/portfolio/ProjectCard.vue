@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ProjectItem } from '@/stores/portfolioData'
-import ProjectSchematic from './ProjectSchematic.vue'
+import ProjectImagePreview from './ProjectImagePreview.vue'
 
 defineProps<{
   project: ProjectItem
@@ -14,11 +14,11 @@ const emit = defineEmits<{
 <template>
   <button
     type="button"
-    class="group flex w-full cursor-pointer flex-col rounded-md border border-zinc-200 bg-white p-4 text-center transition-colors duration-150 hover:border-zinc-300 focus-visible:border-zinc-500 focus-visible:outline-none motion-reduce:transition-none dark:border-carbon-line dark:bg-carbon dark:hover:border-zinc-700 dark:focus-visible:border-zinc-400"
+    class="group flex w-full cursor-pointer flex-col rounded-md border border-zinc-200 bg-white p-3.5 text-center transition-colors duration-150 hover:border-zinc-300 focus-visible:border-zinc-500 focus-visible:outline-none motion-reduce:transition-none dark:border-carbon-line dark:bg-carbon dark:hover:border-zinc-700 dark:focus-visible:border-zinc-400"
     @click="emit('select', project)"
   >
     <!-- Subtle Top Spec Metadata Row -->
-    <div class="mb-2 flex w-full items-center justify-between text-[10.5px] text-zinc-400 dark:text-zinc-500">
+    <div class="mb-2.5 flex w-full items-center justify-between text-[10.5px] text-zinc-400 dark:text-zinc-500">
       <span class="font-mono">{{ project.category }}</span>
       <svg
         width="12"
@@ -37,17 +37,15 @@ const emit = defineEmits<{
       </svg>
     </div>
 
-    <!-- Centered Schematic or Framed Screenshot -->
-    <div class="my-2 flex h-[108px] w-full items-center justify-center">
-      <ProjectSchematic
-        :kind="project.schematic"
-        :image-url="project.imageUrl"
-        :title="project.title"
-      />
-    </div>
+    <!-- Full-Width 16:10 Project Image Preview -->
+    <ProjectImagePreview
+      :image="project.image"
+      :title="project.title"
+      aspect-class="aspect-[16/10]"
+    />
 
     <!-- Title & Plain-Language Subtitle -->
-    <span class="mt-1 text-sm font-medium leading-snug text-zinc-900 dark:text-zinc-100">
+    <span class="mt-3 text-sm font-medium leading-snug text-zinc-900 dark:text-zinc-100">
       {{ project.title }}
     </span>
     <span class="mt-0.5 text-xs leading-snug text-zinc-500 dark:text-zinc-400">
@@ -56,7 +54,7 @@ const emit = defineEmits<{
 
     <!-- Quiet Monochrome Tech Stack Footer -->
     <div
-      class="mt-3.5 flex w-full flex-wrap items-center justify-center gap-1 border-t border-zinc-100 pt-2.5 dark:border-zinc-800/80"
+      class="mt-3 flex w-full flex-wrap items-center justify-center gap-1 border-t border-zinc-100 pt-2.5 dark:border-zinc-800/80"
     >
       <span
         v-for="tech in project.stack.slice(0, 3)"

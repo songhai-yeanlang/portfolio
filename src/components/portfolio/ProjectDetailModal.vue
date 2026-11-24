@@ -2,7 +2,7 @@
 import { onMounted, onUnmounted } from 'vue'
 import type { ProjectItem } from '@/stores/portfolioData'
 import BaseButton from '@/components/base/baseButton.vue'
-import ProjectSchematic from './ProjectSchematic.vue'
+import ProjectImagePreview from './ProjectImagePreview.vue'
 
 defineProps<{
   project: ProjectItem | null
@@ -31,14 +31,14 @@ onUnmounted(() => {
   <Teleport to="body">
     <div
       v-if="project"
-      class="fixed inset-0 z-50 flex items-center justify-center bg-black/35 p-4 backdrop-blur-[1px]"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-[1px]"
       role="dialog"
       aria-modal="true"
       :aria-labelledby="`modal-title-${project.id}`"
       @click.self="emit('close')"
     >
       <div
-        class="w-full max-w-[460px] rounded-lg border border-zinc-300 bg-white p-6 dark:border-zinc-700 dark:bg-carbon"
+        class="w-full max-w-[520px] rounded-lg border border-zinc-300 bg-white p-6 dark:border-zinc-700 dark:bg-carbon"
       >
         <div class="flex items-start justify-between gap-4">
           <div>
@@ -73,13 +73,12 @@ onUnmounted(() => {
           </button>
         </div>
 
-        <div
-          class="my-5 flex h-[140px] items-center justify-center rounded-md border border-zinc-200 bg-white bg-[radial-gradient(#e4e4e7_1px,transparent_1px)] bg-[size:16px_16px] bg-[position:8px_8px] dark:border-carbon-line dark:bg-carbon dark:bg-[radial-gradient(#27272a_1px,transparent_1px)]"
-        >
-          <ProjectSchematic
-            :kind="project.schematic"
-            :image-url="project.imageUrl"
+        <!-- Full-Width 16:10 Project Image Preview in Modal -->
+        <div class="my-4">
+          <ProjectImagePreview
+            :image="project.image"
             :title="project.title"
+            aspect-class="aspect-[16/10]"
           />
         </div>
 
