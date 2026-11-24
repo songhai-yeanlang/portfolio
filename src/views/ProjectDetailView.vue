@@ -327,15 +327,16 @@ onUnmounted(() => {
                 <span>{{ item.label }}</span>
               </div>
 
-              <!-- Right: Clearly Visible Clickable URL -->
-              <div class="min-w-0 flex-1">
+              <!-- Right: Single-Line Truncated Clickable URL -->
+              <div class="w-full min-w-0 flex-1">
                 <a
                   :href="toExternalHref(item.url)"
+                  :title="item.url"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex max-w-full items-center gap-1.5 font-mono text-xs text-blue-600 underline decoration-blue-600/35 underline-offset-4 transition-colors hover:text-blue-700 hover:decoration-blue-700 sm:text-[12.5px] dark:text-sky-400 dark:decoration-sky-400/35 dark:hover:text-sky-300 dark:hover:decoration-sky-300"
+                  class="block max-w-full truncate font-mono text-xs text-blue-600 underline decoration-blue-600/35 underline-offset-4 transition-colors hover:text-blue-700 hover:decoration-blue-700 sm:text-[12.5px] dark:text-sky-400 dark:decoration-sky-400/35 dark:hover:text-sky-300 dark:hover:decoration-sky-300"
                 >
-                  <span class="break-all">{{ item.url }}</span>
+                  {{ item.url }}
                 </a>
               </div>
             </div>
