@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue'
 import type { ProjectItem } from '@/stores/portfolioData'
+import { useAppRouter } from '@/routers'
 import BaseButton from '@/components/base/baseButton.vue'
 import ProjectImagePreview from './ProjectImagePreview.vue'
 
-defineProps<{
+const props = defineProps<{
   project: ProjectItem | null
 }>()
 
@@ -12,10 +13,26 @@ const emit = defineEmits<{
   close: []
 }>()
 
+const { openProjectDetail } = useAppRouter()
+
 function onKeydown(event: KeyboardEvent) {
   if (event.key === 'Escape') {
     emit('close')
   }
+}
+
+function goToDetail() {
+  if (!props.project) return
+  const id = props.project.id
+  emit('close')
+  openProjectDetail(id)
+}
+
+function toExternalHref(rawUrl: string) {
+  const trimmed = rawUrl.trim()
+  if (!trimmed) return '#'
+  if (/^(https?:\/\/|mailto:|tel:|\/)/i.test(trimmed)) return trimmed
+  return `https://${trimmed}`
 }
 
 onMounted(() => {
@@ -48,7 +65,14 @@ onUnmounted(() => {
             >
               {{ project.title }}
             </h3>
-            <p class="mt-0.5 text-[13px] text-zinc-500 dark:text-zinc-400">
+            <p
+              v-if="project.timeline"
+              class="mt-1 inline-flex items-center gap-1.5 font-mono text-xs tabular-nums text-zinc-500 dark:text-zinc-400"
+            >
+              
+              <span>{{ project.timeline }}</span>
+            </p>
+            <p v-else class="mt-0.5 text-[13px] text-zinc-500 dark:text-zinc-400">
               {{ project.subtitle }}
             </p>
           </div>
@@ -98,20 +122,29 @@ onUnmounted(() => {
 
         <div class="mt-6 flex items-center justify-end gap-2.5 border-t border-zinc-200 pt-4 dark:border-carbon-line">
           <BaseButton
-            v-if="project.repoUrl"
-            variant="outline"
-            :href="project.repoUrl"
-            target="_blank"
-          >
-            View source
-          </BaseButton>
-          <BaseButton
             v-if="project.liveUrl"
-            variant="solid"
-            :href="project.liveUrl"
+            variant="outline"
+            :href="toExternalHref(project.liveUrl)"
             target="_blank"
           >
-            Open project
+            View website
+          </BaseButton>
+          <BaseButton variant="solid" @click="goToDetail">
+            <span>View detail</span>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14" />
+              <path d="m13 6 6 6-6 6" />
+            </svg>
           </BaseButton>
         </div>
       </div>

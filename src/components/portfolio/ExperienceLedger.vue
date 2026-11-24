@@ -44,8 +44,8 @@ async function copyEmail() {
           <div class="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
             <h3 class="text-[14.5px] font-medium text-zinc-900 dark:text-zinc-100">
               {{ item.role }}
-              <span class="font-normal text-zinc-500 dark:text-zinc-400">
-                at {{ item.company }}
+              <span v-if="item.company" class="ml-1 font-normal text-zinc-500 dark:text-zinc-400">
+                {{ item.company }}
               </span>
             </h3>
             <span class="font-mono text-xs tabular-nums text-zinc-500 dark:text-zinc-400">
