@@ -48,14 +48,14 @@ onUnmounted(() => {
   <Teleport to="body">
     <div
       v-if="project"
-      class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-[1px]"
+      class="modal-backdrop-enter fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-[1px]"
       role="dialog"
       aria-modal="true"
       :aria-labelledby="`modal-title-${project.id}`"
       @click.self="emit('close')"
     >
       <div
-        class="w-full max-w-[520px] rounded-lg border border-zinc-300 bg-white p-6 dark:border-zinc-700 dark:bg-carbon"
+        class="modal-panel-enter w-full max-w-[520px] rounded-lg border border-zinc-300 bg-white p-6 dark:border-zinc-700 dark:bg-carbon"
       >
         <div class="flex items-start justify-between gap-4">
           <div>

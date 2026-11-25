@@ -32,7 +32,7 @@ const displayedProjects = computed(() => {
 </script>
 
 <template>
-  <section aria-labelledby="projects-heading" class="relative">
+  <section v-reveal="80" aria-labelledby="projects-heading" class="relative">
     <!-- 4 Receding Stacked Sheet Layers (Subtly fan upward when hovering "View all projects") -->
     <div aria-hidden="true" class="select-none">
       <div
@@ -67,12 +67,17 @@ const displayedProjects = computed(() => {
 
       <!-- 3x2 Featured Card Grid (Max 6 Cards on Homepage) -->
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-[18px] lg:grid-cols-3">
-        <ProjectCard
-          v-for="project in displayedProjects"
+        <div
+          v-for="(project, idx) in displayedProjects"
           :key="project.id"
-          :project="project"
-          @select="emit('selectProject', $event)"
-        />
+          v-reveal="60 + idx * 55"
+          class="flex"
+        >
+          <ProjectCard
+            :project="project"
+            @select="emit('selectProject', $event)"
+          />
+        </div>
       </div>
 
       <!-- Integrated Archive Footer Bar -->

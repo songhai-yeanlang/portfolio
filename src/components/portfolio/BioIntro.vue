@@ -29,6 +29,7 @@ const bioParts = computed(() => {
   >
     <!-- Circular Avatar / Slate Disc -->
     <div
+      v-reveal="100"
       class="h-[74px] w-[74px] shrink-0 overflow-hidden rounded-full bg-[#69707d] ring-1 ring-zinc-200 sm:h-20 sm:w-20 dark:ring-carbon-line"
     >
       <img
@@ -41,6 +42,7 @@ const bioParts = computed(() => {
 
     <!-- Left-Aligned Personal Narrative (< 75ch per line) -->
     <p
+      v-reveal="170"
       class="max-w-[65ch] text-left text-[17px] leading-[1.58] font-normal tracking-[-0.01em] text-zinc-700 sm:text-lg dark:text-zinc-300"
     >
       <template v-for="(part, idx) in bioParts" :key="idx">

@@ -27,9 +27,14 @@ async function copyEmail() {
 <template>
   <div>
     <!-- Terminal Vertical Stem & Minimal Contact Bar -->
-    <div class="mx-auto h-8 w-px bg-zinc-200 dark:bg-carbon-line" aria-hidden="true" />
+    <div
+      v-reveal="{ variant: 'line-y', delay: 0 }"
+      class="mx-auto h-8 w-px bg-zinc-200 dark:bg-carbon-line"
+      aria-hidden="true"
+    />
 
     <footer
+      v-reveal="80"
       class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 rounded-md border border-zinc-200 bg-white px-5 py-3 text-[12.5px] text-zinc-500 dark:border-carbon-line dark:bg-carbon dark:text-zinc-400"
     >
       <button

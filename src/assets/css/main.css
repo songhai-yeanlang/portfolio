@@ -1,1 +1,88 @@
-/* Custom CSS strictly for styles Tailwind CSS utilities cannot do natively */
+/* Custom CSS strictly for scroll-reveal states & keyframes Tailwind utilities cannot do natively */
+
+[data-reveal="up"] {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  filter: blur(2px);
+  transition:
+    opacity 620ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    filter 520ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-reveal="up"][data-revealed="true"] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  filter: blur(0);
+}
+
+[data-reveal="line-x"] {
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition:
+    opacity 400ms ease var(--reveal-delay, 0ms),
+    transform 720ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+}
+
+[data-reveal="line-x"][data-revealed="true"] {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+[data-reveal="line-y"] {
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition:
+    opacity 320ms ease var(--reveal-delay, 0ms),
+    transform 500ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+}
+
+[data-reveal="line-y"][data-revealed="true"] {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+@keyframes modal-backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-panel-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.modal-backdrop-enter {
+  animation: modal-backdrop-in 180ms ease-out both;
+}
+
+.modal-panel-enter {
+  animation: modal-panel-in 240ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  .modal-backdrop-enter,
+  .modal-panel-enter {
+    animation: none !important;
+  }
+}

@@ -10,6 +10,7 @@ defineProps<{
 <template>
   <div>
     <section
+      v-reveal="230"
       aria-labelledby="skills-heading"
       class="relative rounded-lg border border-zinc-200 bg-white px-5 py-6 sm:px-7 sm:py-7 dark:border-carbon-line dark:bg-carbon"
     >
@@ -51,6 +52,10 @@ defineProps<{
     </section>
 
     <!-- Central 1px Vertical Connector Stem down to PROJECTS -->
-    <div class="mx-auto h-10 w-px bg-zinc-200 dark:bg-carbon-line" aria-hidden="true" />
+    <div
+      v-reveal="{ variant: 'line-y', delay: 60 }"
+      class="mx-auto h-10 w-px bg-zinc-200 dark:bg-carbon-line"
+      aria-hidden="true"
+    />
   </div>
 </template>

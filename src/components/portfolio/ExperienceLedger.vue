@@ -9,10 +9,15 @@ defineProps<{
 <template>
   <div>
     <!-- Central 1px Vertical Connector Stem from PROJECTS -->
-    <div class="mx-auto h-12 w-px bg-zinc-200 dark:bg-carbon-line" aria-hidden="true" />
+    <div
+      v-reveal="{ variant: 'line-y', delay: 0 }"
+      class="mx-auto h-12 w-px bg-zinc-200 dark:bg-carbon-line"
+      aria-hidden="true"
+    />
 
     <!-- Connected Experience Ledger Container -->
     <section
+      v-reveal="90"
       aria-labelledby="experience-heading"
       class="relative rounded-lg border border-zinc-200 bg-white px-5 py-7 sm:px-8 sm:py-8 dark:border-carbon-line dark:bg-carbon"
     >

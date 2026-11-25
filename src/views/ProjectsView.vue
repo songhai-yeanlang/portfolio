@@ -60,7 +60,10 @@ function resetFilters() {
     @toggle-theme="toggleTheme"
   >
     <!-- Top Archive Navigation & Intro -->
-    <div class="mt-8 mb-7 flex flex-col justify-between gap-4 sm:mt-10 sm:flex-row sm:items-end">
+    <div
+      v-reveal="40"
+      class="mt-8 mb-7 flex flex-col justify-between gap-4 sm:mt-10 sm:flex-row sm:items-end"
+    >
       <div>
         <button
           type="button"
@@ -133,6 +136,7 @@ function resetFilters() {
 
     <!-- Dot-Matrix Archive Grid -->
     <section
+      v-reveal="100"
       aria-label="Project archive"
       class="relative rounded-lg border border-zinc-200 bg-white bg-[radial-gradient(#e4e4e7_1px,transparent_1px)] bg-[size:16px_16px] bg-[position:8px_8px] p-4 sm:p-5 dark:border-carbon-line dark:bg-carbon dark:bg-[radial-gradient(#27272a_1px,transparent_1px)]"
     >

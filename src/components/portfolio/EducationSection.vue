@@ -9,10 +9,10 @@ defineProps<{
 <template>
   <div v-if="education.length > 0">
     <!-- Central 1px Vertical Connector Stem from EXPERIENCE -->
-    <div class="mx-auto h-12 w-px bg-zinc-200 dark:bg-carbon-line" aria-hidden="true" />
+    <div v-reveal="{ variant: 'line-y', delay: 0 }" class="mx-auto h-12 w-px bg-zinc-200 dark:bg-carbon-line" aria-hidden="true" />
 
     <!-- Connected Education Container -->
-    <section aria-labelledby="education-heading"
+    <section v-reveal="90" aria-labelledby="education-heading"
       class="relative rounded-lg border border-zinc-200 bg-white px-5 py-7 sm:px-8 sm:py-8 dark:border-carbon-line dark:bg-carbon">
       <h2 id="education-heading"
         class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-3.5 text-[11px] font-medium tracking-[0.07em] text-zinc-900 select-none dark:bg-carbon dark:text-zinc-100">

@@ -18,6 +18,7 @@ const { navigateTo } = useAppRouter()
   <header class="flex items-center select-none">
     <!-- Left: </> Developer Logo Badge -->
     <a
+      v-reveal="0"
       href="#/"
       aria-label="Home"
       title="Home"
@@ -42,10 +43,15 @@ const { navigateTo } = useAppRouter()
     </a>
 
     <!-- Middle: Connecting Horizontal Line -->
-    <div class="mx-3 h-px flex-1 bg-zinc-300/90 dark:bg-zinc-700/80" aria-hidden="true" />
+    <div
+      v-reveal="{ variant: 'line-x', delay: 80 }"
+      class="mx-3 h-px flex-1 bg-zinc-300/90 dark:bg-zinc-700/80"
+      aria-hidden="true"
+    />
 
     <!-- Right: Compact Icon Dock -->
     <div
+      v-reveal="140"
       class="inline-flex shrink-0 items-center rounded-lg border border-zinc-200/90 bg-zinc-50/70 p-1 dark:border-carbon-line dark:bg-carbon-window"
     >
       <a

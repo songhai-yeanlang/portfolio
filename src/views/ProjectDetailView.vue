@@ -172,7 +172,7 @@ onUnmounted(() => {
       </div>
 
       <!-- 1. Main Overview & Links Container -->
-      <section aria-labelledby="detail-heading"
+      <section v-reveal="60" aria-labelledby="detail-heading"
         class="relative rounded-lg border border-zinc-200 bg-white p-5 sm:p-8 dark:border-carbon-line dark:bg-carbon">
         <div class="mb-5">
           <h1 id="detail-heading"
@@ -208,9 +208,10 @@ onUnmounted(() => {
 
       <!-- 2. Dedicated URL Ledger Section (Clearly Displays Full Links + Copy/Open) -->
       <template v-if="resourceLinks.length > 0">
-        <div class="mx-auto h-10 w-px bg-zinc-200 dark:bg-carbon-line" aria-hidden="true" />
+        <div v-reveal="{ variant: 'line-y', delay: 0 }" class="mx-auto h-10 w-px bg-zinc-200 dark:bg-carbon-line" aria-hidden="true" />
 
         <section
+          v-reveal="80"
           aria-labelledby="links-heading"
           class="relative rounded-lg border border-zinc-200 bg-white px-5 py-6 sm:px-7 sm:py-7 dark:border-carbon-line dark:bg-carbon"
         >
@@ -323,9 +324,9 @@ onUnmounted(() => {
       </template>
 
       <!-- 3. System Screenshots Gallery -->
-      <div class="mx-auto h-10 w-px bg-zinc-200 dark:bg-carbon-line" aria-hidden="true" />
+      <div v-reveal="{ variant: 'line-y', delay: 0 }" class="mx-auto h-10 w-px bg-zinc-200 dark:bg-carbon-line" aria-hidden="true" />
 
-      <section aria-labelledby="screenshots-heading"
+      <section v-reveal="80" aria-labelledby="screenshots-heading"
         class="relative rounded-lg border border-zinc-200 bg-white bg-[radial-gradient(#e4e4e7_1px,transparent_1px)] bg-[size:16px_16px] bg-[position:8px_8px] p-4 pt-7 sm:p-6 sm:pt-7 dark:border-carbon-line dark:bg-carbon dark:bg-[radial-gradient(#27272a_1px,transparent_1px)]">
         <h2 id="screenshots-heading"
           class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-3.5 text-[11px] font-medium tracking-[0.07em] text-zinc-900 select-none dark:bg-carbon dark:text-zinc-100">
@@ -362,9 +363,9 @@ onUnmounted(() => {
     <!-- Full-Screen Screenshot Lightbox -->
     <Teleport to="body">
       <div v-if="activeScreenshot"
-        class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/80 p-4 backdrop-blur-[2px]"
+        class="modal-backdrop-enter fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/80 p-4 backdrop-blur-[2px]"
         role="dialog" aria-modal="true" aria-label="Screenshot viewer" @click.self="closeLightbox">
-        <div class="relative flex w-full max-w-5xl flex-col items-center">
+        <div class="modal-panel-enter relative flex w-full max-w-5xl flex-col items-center">
           <div class="mb-3 flex w-full items-center justify-between text-zinc-200">
             <span class="font-mono text-xs">
               {{ (lightboxIndex ?? 0) + 1 }} / {{ normalizedScreenshots.length }}
