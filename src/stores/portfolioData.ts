@@ -7,6 +7,9 @@ import posCafeImg2 from '@/assets/images/projects/Untitled-5.png'
 import posCafeImg3 from '@/assets/images/projects/Untitled-6.png'
 import posCafeImg4 from '@/assets/images/projects/Untitled-7.png'
 import tgSenderImg2 from '@/assets/images/projects/Untitled-8.png'
+import menImg2 from '@/assets/images/memories/mem-2.jpg'
+import menImg3 from '@/assets/images/memories/men-3.jpg'
+import menImg1 from '@/assets/images/memories/men-1.png'
 
 export type ProjectCategory = 'Full-Stack' | 'Frontend' | 'Backend & DevOps'
 
@@ -72,6 +75,23 @@ export interface ExperienceItem {
   description: string
 }
 
+export interface EducationItem {
+  id: string
+  degree: string
+  school: string
+  location?: string
+  period: string
+  description?: string
+}
+
+export interface MemoryItem {
+  id: string
+  image?: string
+  title: string
+  date?: string
+  caption?: string
+}
+
 export interface PortfolioProfile {
   handle: string
   fullName: string
@@ -84,6 +104,8 @@ export interface PortfolioProfile {
   skillGroups: SkillGroup[]
   projects: ProjectItem[]
   experience: ExperienceItem[]
+  education: EducationItem[]
+  memories: MemoryItem[]
 }
 
 export const portfolioData: PortfolioProfile = {
@@ -230,5 +252,51 @@ export const portfolioData: PortfolioProfile = {
       description:
         'Building web applications and REST APIs for clients using Vue, TypeScript, Node.js, and SQL databases.',
     },
+  ],
+  education: [
+    
+    {
+      id: 'edu-1',
+      degree: 'Bachelor of Management Information System (MIS)',
+      school: 'at Setec Institute',
+      location: 'Phnom Penh, Cambodia',
+      period: '2023 – Present',
+      description:
+        '',
+    },
+    {
+      id: 'edu-2',
+      degree: 'Web Application Development with Node.js',
+      school: 'at ANT Technology Training Center',
+      location: 'Phnom Penh, Cambodia',
+      period: '2025 – 2026',
+      description:
+        '100% Scholarship (700-hour program), sponsored by the Ministry of Post and Telecommunications and the CBRD Fund.',
+    },
+  ],
+  memories: [
+  
+    {
+      id: 'mem-1',
+      image: menImg1,
+      title: 'certificate.',
+      date: 'july 2026',
+      caption: 'Web Application Development with Node.js',
+    },
+    {
+      id: 'mem-2',
+      image: menImg2,
+      title: 'Scholarship.',
+      date: 'july 2026',
+      caption: 'at ANT Technology Training Center ',
+    },
+    {
+      id: 'mem-3',
+      image: menImg3,
+      title: 'Scholarship.',
+      date: 'july 2026',
+      caption: 'at ANT Technology Training Center ',
+    },
+    
   ],
 }
