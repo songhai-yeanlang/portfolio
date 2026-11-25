@@ -3,6 +3,10 @@ import posCafeImg from '@/assets/images/projects/Untitled-1.png'
 import tgSenderImg from '@/assets/images/projects/Untitled-2.png'
 import antForumImg from '@/assets/images/projects/Untitled-3.png'
 import phsarYerngImg from '@/assets/images/projects/Untitled-4.png'
+import posCafeImg2 from '@/assets/images/projects/Untitled-5.png'
+import posCafeImg3 from '@/assets/images/projects/Untitled-6.png'
+import posCafeImg4 from '@/assets/images/projects/Untitled-7.png'
+import tgSenderImg2 from '@/assets/images/projects/Untitled-8.png'
 
 export type ProjectCategory = 'Full-Stack' | 'Frontend' | 'Backend & DevOps'
 
@@ -125,7 +129,7 @@ export const portfolioData: PortfolioProfile = {
       id: 'pos-system-cafe',
       title: 'pos system cafe',
       subtitle: 'Manage Cafe shop',
-      timeline: 'Oct 2026 – Nov 2026',
+      timeline: 'Nov 2026 – Nov 2026',
       category: 'Full-Stack',
       featured: true,
       image: posCafeImg,
@@ -138,6 +142,9 @@ export const portfolioData: PortfolioProfile = {
       demoVideoUrl: '',
       screenshots: [
         { image: posCafeImg, caption: 'POS order & checkout screen' },
+        { image: posCafeImg2, caption: 'Dashboard for admin' },
+        { image: posCafeImg3, caption: 'page promote code for admin' },
+        { image: posCafeImg4, caption: 'system for staff' },
       ],
     },
     {
@@ -150,12 +157,13 @@ export const portfolioData: PortfolioProfile = {
       image: tgSenderImg,
       summary: 'TG-Sender is a tool that can send messages to Telegram users.',
       stack: ['Bootstrap', 'Vue 3', 'ExpressJS', 'MySQL'],
-      liveUrl: '',
+      liveUrl: 'https://telegram-sender-sandy.vercel.app/',
       frontendRepoUrl: 'https://github.com/songhai-yeanlang/telegram-auto-sender-frontend.git',
       backendRepoUrl: 'https://github.com/songhai-yeanlang/telegram-auto-sender-backend.git',
       demoVideoUrl: '',
       screenshots: [
         { image: tgSenderImg, caption: 'Broadcast composer & recipient list' },
+        { image: tgSenderImg2, caption: 'page manage users ' },
       ],
     },
     {
@@ -169,10 +177,10 @@ export const portfolioData: PortfolioProfile = {
       summary:
         'A community website for discussing, sharing knowledge, and showcasing various software development projects.',
       stack: ['Vue.js', 'Booystrap', 'ExpressJS', 'MySQL'],
-      liveUrl: 'https://github.com/songhai-yeanlang',
-      frontendRepoUrl: 'https://github.com/songhai-yeanlang',
-      backendRepoUrl: 'https://github.com/songhai-yeanlang',
-      demoVideoUrl: '',
+      liveUrl: 'https://front-end-ant-forum.vercel.app/',
+      frontendRepoUrl: 'https://github.com/ant-forum',
+      backendRepoUrl: 'https://github.com/ant-forum',
+      demoVideoUrl: 'https://www.youtube.com/watch?v=Gr_JCYQpSoU',
       screenshots: [antForumImg],
     },
     {
@@ -184,16 +192,16 @@ export const portfolioData: PortfolioProfile = {
       featured: true,
       image: '',
       summary:
-        'is a sample blog post website for my practice full-stack development.',
-      stack: ['Vue.js', 'ExpressJS', 'PostgreSQL'],
-      liveUrl: 'https://github.com/songhai-yeanlang',
-      frontendRepoUrl: 'https://github.com/songhai-yeanlang',
-      backendRepoUrl: 'https://github.com/songhai-yeanlang',
+        'is a sample blog post website for my first practice full-stack development.',
+      stack: ['Tailwind CSS', 'ExpressJS', 'MySQL', 'Vue 3'],
+      liveUrl: 'https://blog-platform-frontend-eta.vercel.app/',
+      frontendRepoUrl: 'https://github.com/songhai-yeanlang/Blog-Platform-Frontend.git',
+      backendRepoUrl: 'https://github.com/songhai-yeanlang/Blog-Platform-Backend.git',
       demoVideoUrl: '',
       screenshots: [],
     },
     {
-      id: 'phsar-yerng-1',
+      id: 'phsar-yerng',
       title: 'phsar yerng ',
       subtitle: ' Website Ecommunce ',
        timeline: 'Jam 2026 – Mar 2026',
@@ -202,11 +210,11 @@ export const portfolioData: PortfolioProfile = {
       image: phsarYerngImg,
       summary:
         'all in one website that allow user can buy and sell in here !',
-      stack: ['Node.js', 'ExpressJS', 'PostgreSQL', 'Postman'],
-      liveUrl: 'https://github.com/songhai-yeanlang',
-      frontendRepoUrl: 'https://github.com/songhai-yeanlang',
-      backendRepoUrl: 'https://github.com/songhai-yeanlang',
-      demoVideoUrl: '',
+      stack: [' fetch api ', 'Vue.js', 'Bootstrap'],
+      liveUrl: 'https://vue-e-commerce-ant.vercel.app/',
+      frontendRepoUrl: 'https://github.com/Alchemyyyy/Vue-E-Commerce-ANT.git',
+      backendRepoUrl: '',
+      demoVideoUrl: 'https://youtu.be/qX9gBAeHBM4?si=UkAWDPAaPXoHfWNt',
       screenshots: [phsarYerngImg],
     },
   

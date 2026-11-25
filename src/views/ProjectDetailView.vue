@@ -21,28 +21,6 @@ const normalizedScreenshots = computed<ProjectScreenshot[]>(() => {
     .filter((entry) => Boolean(entry.image))
 })
 
-const youtubeEmbedUrl = computed(() => {
-  const url = project.value?.demoVideoUrl?.trim()
-  if (!url) return null
-
-  const shortMatch = url.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/)
-  if (shortMatch?.[1]) return `https://www.youtube.com/embed/${shortMatch[1]}`
-
-  const watchMatch = url.match(/[?&]v=([a-zA-Z0-9_-]{11})/)
-  if (watchMatch?.[1]) return `https://www.youtube.com/embed/${watchMatch[1]}`
-
-  const embedMatch = url.match(/youtube\.com\/embed\/([a-zA-Z0-9_-]{11})/)
-  if (embedMatch?.[1]) return `https://www.youtube.com/embed/${embedMatch[1]}`
-
-  return null
-})
-
-const isDirectVideoFile = computed(() => {
-  const url = project.value?.demoVideoUrl?.trim().toLowerCase()
-  if (!url) return false
-  return url.endsWith('.mp4') || url.endsWith('.webm') || url.endsWith('.ogg')
-})
-
 const resourceLinks = computed(() => {
   const p = project.value
   if (!p) return []
@@ -344,28 +322,7 @@ onUnmounted(() => {
         </section>
       </template>
 
-      <!-- 2. Embedded Video Demo Player (Auto-shown for YouTube or direct MP4/WebM URLs) -->
-      <template v-if="youtubeEmbedUrl || isDirectVideoFile">
-        <div class="mx-auto h-10 w-px bg-zinc-200 dark:bg-carbon-line" aria-hidden="true" />
-
-        <section aria-labelledby="video-heading"
-          class="relative rounded-lg border border-zinc-200 bg-white p-5 pt-7 sm:p-6 sm:pt-7 dark:border-carbon-line dark:bg-carbon">
-          <h2 id="video-heading"
-            class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-3.5 text-[11px] font-medium tracking-[0.07em] text-zinc-900 select-none dark:bg-carbon dark:text-zinc-100">
-            VIDEO DEMO
-          </h2>
-
-          <div class="overflow-hidden rounded-md border border-zinc-200 bg-black aspect-video dark:border-carbon-line">
-            <iframe v-if="youtubeEmbedUrl" :src="youtubeEmbedUrl" :title="`${project.title} video demo`"
-              class="h-full w-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen />
-            <video v-else-if="isDirectVideoFile" :src="project.demoVideoUrl" controls class="h-full w-full" />
-          </div>
-        </section>
-      </template>
-
-      <!-- 4. System Screenshots Gallery -->
+      <!-- 3. System Screenshots Gallery -->
       <div class="mx-auto h-10 w-px bg-zinc-200 dark:bg-carbon-line" aria-hidden="true" />
 
       <section aria-labelledby="screenshots-heading"
