@@ -6,10 +6,13 @@ import phsarYerngImg from '@/assets/images/projects/Untitled-4.png'
 import posCafeImg2 from '@/assets/images/projects/Untitled-5.png'
 import posCafeImg3 from '@/assets/images/projects/Untitled-6.png'
 import posCafeImg4 from '@/assets/images/projects/Untitled-7.png'
+import posCafeImg5 from '@/assets/images/projects/Untitled-9.png'
+import posCafeImg6 from '@/assets/images/projects/Untitled-10.png'
 import tgSenderImg2 from '@/assets/images/projects/Untitled-8.png'
 import menImg2 from '@/assets/images/memories/mem-2.jpg'
 import menImg3 from '@/assets/images/memories/men-3.jpg'
 import menImg1 from '@/assets/images/memories/men-1.png'
+
 
 export type ProjectCategory = 'Full-Stack' | 'Frontend' | 'Backend & DevOps'
 
@@ -112,7 +115,7 @@ export const portfolioData: PortfolioProfile = {
   handle: 'yeanlang',
   fullName: 'Songhai Yeanlang',
   avatarUrl: avatarPhoto,
-  bio: "I'm Songhai Yeanlang, a Junior Web Developer in Phnom Penh who enjoys turning practical ideas into clean, responsive interfaces and reliable backend services. I focus on building useful web apps while continually learning through hands-on projects. ",
+  bio: " I'm Songhai Yeanlang, a Junior Web Developer based in Phnom Penh who enjoys learning and building web applications that work across all devices. I'm also interested in designing mobile UIs that look and feel like native apps while continuously improving my skills through hands-on projects.",
   email: 'langofficial19@gmail.com',
   githubUrl: 'https://github.com/songhai-yeanlang',
   telegramUrl: 'https://t.me/songhai_yeanlang',
@@ -167,6 +170,8 @@ export const portfolioData: PortfolioProfile = {
         { image: posCafeImg2, caption: 'Dashboard for admin' },
         { image: posCafeImg3, caption: 'page promote code for admin' },
         { image: posCafeImg4, caption: 'system for staff' },
+        { image: posCafeImg5, caption: 'Mobile Screen' },
+        { image: posCafeImg6, caption: 'Ipad Screen' },
       ],
     },
     {
