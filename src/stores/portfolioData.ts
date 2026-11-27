@@ -151,6 +151,25 @@ export const portfolioData: PortfolioProfile = {
   ],
   projects: [
     {
+      id: 'Retail POS System',
+      title: 'Retail POS System',
+      subtitle: 'Comming soon...',
+      timeline: 'Nov 2026 – Nov 2026',
+      category: 'Full-Stack',
+      featured: true,
+      image: '',
+      summary:
+        '',
+      stack: ['TypeScript', 'Vue.js', 'Node.js','Bootstrap', 'ExpressJS', 'MySQL'],
+      liveUrl: '',
+      frontendRepoUrl: '',
+      backendRepoUrl: '',
+      demoVideoUrl: '',
+      screenshots: [
+
+      ],
+    },
+    {
       id: 'pos-system-cafe',
       title: 'pos system cafe',
       subtitle: 'Manage Cafe shop',
@@ -174,6 +193,7 @@ export const portfolioData: PortfolioProfile = {
         { image: posCafeImg6, caption: 'Ipad Screen' },
       ],
     },
+
     {
       id: 'tg-sender',
       title: 'tg sender',
@@ -197,12 +217,12 @@ export const portfolioData: PortfolioProfile = {
       id: 'ant-forum-community',
       title: 'ant forum commity',
       subtitle: ' Website Community',
-       timeline: 'April 2026 – July 2026',
+      timeline: 'April 2026 – July 2026',
       category: 'Backend & DevOps',
       featured: true,
       image: antForumImg,
       summary:
-        'A community website for discussing, sharing knowledge, and showcasing various software development projects.',
+        '(Academic project) – A community website for discussing, sharing knowledge, and showcasing various software development projects.',
       stack: ['Vue.js', 'Booystrap', 'ExpressJS', 'MySQL'],
       liveUrl: 'https://front-end-ant-forum.vercel.app/',
       frontendRepoUrl: 'https://github.com/ant-forum',
@@ -214,7 +234,7 @@ export const portfolioData: PortfolioProfile = {
       id: 'blog-post',
       title: 'blog post website',
       subtitle: 'Sample blog post website',
-       timeline: 'July 2026 – July 2026',
+      timeline: 'July 2026 – July 2026',
       category: 'Full-Stack',
       featured: true,
       image: '',
@@ -231,12 +251,12 @@ export const portfolioData: PortfolioProfile = {
       id: 'phsar-yerng',
       title: 'phsar yerng ',
       subtitle: ' Website Ecommunce ',
-       timeline: 'Jam 2026 – Mar 2026',
+      timeline: 'Jam 2026 – Mar 2026',
       category: 'Frontend',
       featured: true,
       image: phsarYerngImg,
       summary:
-        'all in one website that allow user can buy and sell in here !',
+        '(Academic project) – all in one website that allow user can buy and sell in here !',
       stack: [' fetch api ', 'Vue.js', 'Bootstrap'],
       liveUrl: 'https://vue-e-commerce-ant.vercel.app/',
       frontendRepoUrl: 'https://github.com/Alchemyyyy/Vue-E-Commerce-ANT.git',
@@ -244,8 +264,8 @@ export const portfolioData: PortfolioProfile = {
       demoVideoUrl: 'https://youtu.be/qX9gBAeHBM4?si=UkAWDPAaPXoHfWNt',
       screenshots: [phsarYerngImg],
     },
-  
-  
+
+
   ],
   experience: [
     {
@@ -259,7 +279,7 @@ export const portfolioData: PortfolioProfile = {
     },
   ],
   education: [
-    
+
     {
       id: 'edu-1',
       degree: 'Bachelor of Management Information System (MIS)',
@@ -280,7 +300,7 @@ export const portfolioData: PortfolioProfile = {
     },
   ],
   memories: [
-  
+
     {
       id: 'mem-1',
       image: menImg1,
@@ -302,6 +322,6 @@ export const portfolioData: PortfolioProfile = {
       date: 'july 2026',
       caption: 'at ANT Technology Training Center ',
     },
-    
+
   ],
 }
